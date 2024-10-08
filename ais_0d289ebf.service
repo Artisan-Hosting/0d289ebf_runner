@@ -4,14 +4,14 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/ais_generic
-WorkingDirectory=/etc/ais_generic
+ExecStart=/usr/local/bin/ais_0d289ebf
+WorkingDirectory=/etc/ais_0d289ebf
 Restart=on-failure
 RestartSec=5
 User=root
 Environment="RUST_LOG=info"
-StandardOutput=file:/var/log/ais_runner.log
-StandardError=file:/var/log/ais_runner_error.log
+StandardOutput=file:/var/log/ais_0d289ebf.log
+StandardError=file:/var/log/ais_0d289ebf_error.log
 
 [Install]
 WantedBy=multi-user.target

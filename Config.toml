@@ -1,5 +1,5 @@
 [app_specific]
-interval_seconds = "30"
-monitor_path = "./"
-project_path = "./"
-changes_needed = "10" # Guess config for now 
+interval_seconds = "3600" # Since the dev env auto rebuilds
+monitor_path = "/var/www/ais/0d289ebf/src"
+project_path = "/var/www/ais/0d289ebf"
+changes_needed = "100" # Guess config for now 

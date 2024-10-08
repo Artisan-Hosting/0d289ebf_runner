@@ -15,11 +15,11 @@ pub async fn create_child(
 
     let mut command = Command::new("npm");
     command
-        .args(&["--prefix", &settings.clone().project_path, "run", "start"]) // Updated to run "build" instead of "start"
+        .args(&["--prefix", &settings.clone().project_path, "run", "dev"]) // Updated to run "build" instead of "start"
         .stdout(Stdio::piped())
         .stderr(Stdio::piped())
-        .env("NODE_ENV", "production") // Set NODE_ENV=production
-        .env("PORT", "3000"); // Set PORT=3000
+        // .env("NODE_ENV", "production") // Set NODE_ENV=production
+        .env("PORT", "9501"); // Set PORT=3000
 
     // Set the process to start a new process group
     unsafe {
@@ -53,13 +53,12 @@ pub async fn create_child(
 }
 
 pub async fn run_one_shot_process(settings: &AppSpecificConfig) -> Result<(), String> {
-    // Set the environment variable NODE_ENV to "production"
     let output = Command::new("npm")
         .arg("--prefix")
         .arg(settings.clone().project_path)
         .arg("run")
         .arg("build")
-        .env("NODE_ENV", "production") // Add this line to set NODE_ENV=production
+        // .env("NODE_ENV", "production") // Add this line to set NODE_ENV=production
         .output()
         .await
         .map_err(|err| format!("Failed to execute npm run build: {}", err))?;
