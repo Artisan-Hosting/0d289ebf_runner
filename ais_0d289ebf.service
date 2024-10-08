@@ -8,7 +8,7 @@ ExecStart=/usr/local/bin/ais_0d289ebf
 WorkingDirectory=/etc/ais_0d289ebf
 Restart=on-failure
 RestartSec=5
-User=root
+User=www-data
 Environment="RUST_LOG=info"
 StandardOutput=file:/var/log/ais_0d289ebf.log
 StandardError=file:/var/log/ais_0d289ebf_error.log
